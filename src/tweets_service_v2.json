@@ -1,0 +1,1357 @@
+{
+    "renderer": "global",
+    "name": "tweets_service_v2",
+    "nodes": [
+        {
+            "renderer": "region",
+            "name": "INTERNET",
+            "updated": 1520449760,
+            "class": "normal",
+            "metadata": {
+                "streaming": 0
+            }
+        },
+        {
+            "renderer": "region",
+            "name": "us-east-1",
+            "maxVolume": 2000,
+            "updated": 1520449760,
+            "nodes": [
+                {
+                    "name": "INTERNET",
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-elasticsearch",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-indexer",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-search",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-zookeeper",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-kafka",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-worker",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "www-tweets",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "www",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                }
+            ],
+            "connections": [
+                {
+                    "source": "tweets-indexer",
+                    "target": "tweets-elasticsearch",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-indexer",
+                    "target": "tweets-kafka",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-search",
+                    "target": "tweets-elasticsearch",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-kafka",
+                    "target": "tweets-zookeeper",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-worker",
+                    "target": "tweets-kafka",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "www-tweets",
+                    "target": "tweets-search",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "www-tweets",
+                    "target": "tweets-worker",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "www",
+                    "target": "www-tweets",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "INTERNET",
+                    "target": "www",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 1000
+                    },
+                    "status": {},
+                    "class": "normal"
+                }
+            ],
+            "class": "normal",
+            "metadata": {
+                "streaming": 1
+            }
+        },
+        {
+            "renderer": "region",
+            "name": "eu-west-1",
+            "maxVolume": 2000,
+            "updated": 1520449760,
+            "nodes": [
+                {
+                    "name": "INTERNET",
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-elasticsearch",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-indexer",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-search",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-zookeeper",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-kafka",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-worker",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "www-tweets",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "www",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                }
+            ],
+            "connections": [
+                {
+                    "source": "tweets-indexer",
+                    "target": "tweets-elasticsearch",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-indexer",
+                    "target": "tweets-kafka",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-search",
+                    "target": "tweets-elasticsearch",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-kafka",
+                    "target": "tweets-zookeeper",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-worker",
+                    "target": "tweets-kafka",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "www-tweets",
+                    "target": "tweets-search",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "www-tweets",
+                    "target": "tweets-worker",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "www",
+                    "target": "www-tweets",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "INTERNET",
+                    "target": "www",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 1000
+                    },
+                    "status": {},
+                    "class": "normal"
+                }
+            ],
+            "class": "normal",
+            "metadata": {
+                "streaming": 1
+            }
+        },
+        {
+            "renderer": "region",
+            "name": "us-west-2",
+            "maxVolume": 2000,
+            "updated": 1520449760,
+            "nodes": [
+                {
+                    "name": "INTERNET",
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-elasticsearch",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-indexer",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-search",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-zookeeper",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-kafka",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-worker",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "www-tweets",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "www",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                }
+            ],
+            "connections": [
+                {
+                    "source": "tweets-indexer",
+                    "target": "tweets-elasticsearch",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-indexer",
+                    "target": "tweets-kafka",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-search",
+                    "target": "tweets-elasticsearch",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-kafka",
+                    "target": "tweets-zookeeper",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-worker",
+                    "target": "tweets-kafka",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "www-tweets",
+                    "target": "tweets-search",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "www-tweets",
+                    "target": "tweets-worker",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "www",
+                    "target": "www-tweets",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "INTERNET",
+                    "target": "www",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 1000
+                    },
+                    "status": {},
+                    "class": "normal"
+                }
+            ],
+            "class": "normal",
+            "metadata": {
+                "streaming": 1
+            }
+        },
+        {
+            "renderer": "region",
+            "name": "ap-southeast-1",
+            "maxVolume": 2000,
+            "updated": 1520449760,
+            "nodes": [
+                {
+                    "name": "INTERNET",
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-elasticsearch",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-indexer",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-search",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-zookeeper",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-kafka",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "tweets-worker",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "www-tweets",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                },
+                {
+                    "name": "www",
+                    "notices": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal",
+                    "metadata": {
+                        "streaming": 1
+                    }
+                }
+            ],
+            "connections": [
+                {
+                    "source": "tweets-indexer",
+                    "target": "tweets-elasticsearch",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-indexer",
+                    "target": "tweets-kafka",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-search",
+                    "target": "tweets-elasticsearch",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-kafka",
+                    "target": "tweets-zookeeper",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "tweets-worker",
+                    "target": "tweets-kafka",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "www-tweets",
+                    "target": "tweets-search",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "www-tweets",
+                    "target": "tweets-worker",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "www",
+                    "target": "www-tweets",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 500
+                    },
+                    "status": {},
+                    "node": [
+                        {
+                            "title": "notice title",
+                            "subtitle": "notice subtitle",
+                            "link": "http://github.com/adrianco/spigo",
+                            "severity": 2
+                        }
+                    ],
+                    "class": "normal"
+                },
+                {
+                    "source": "INTERNET",
+                    "target": "www",
+                    "metadata": {
+                        "streaming": 1
+                    },
+                    "metrics": {
+                        "danger": 92.3,
+                        "normal": 1000
+                    },
+                    "status": {},
+                    "class": "normal"
+                }
+            ],
+            "class": "normal",
+            "metadata": {
+                "streaming": 1
+            }
+        }
+    ],
+    "connections": [
+        {
+            "source": "INTERNET",
+            "target": "us-east-1",
+            "metadata": {
+                "streaming": 0
+            },
+            "metrics": {
+                "danger": 92.3,
+                "normal": 1000
+            },
+            "status": {},
+            "class": "normal"
+        },
+        {
+            "source": "INTERNET",
+            "target": "us-west-2",
+            "metadata": {
+                "streaming": 0
+            },
+            "metrics": {
+                "danger": 62.3,
+                "normal": 800
+            },
+            "status": {},
+            "class": "normal"
+        },
+        {
+            "source": "INTERNET",
+            "target": "eu-west-1",
+            "metadata": {
+                "streaming": 0
+            },
+            "metrics": {
+                "danger": 32.3,
+                "normal": 900
+            },
+            "status": {},
+            "class": "normal"
+        },
+        {
+            "source": "INTERNET",
+            "target": "ap-southeast-1",
+            "metadata": {
+                "streaming": 0
+            },
+            "metrics": {
+                "danger": 32.3,
+                "normal": 400
+            },
+            "status": {},
+            "class": "normal"
+        }
+    ]
+}

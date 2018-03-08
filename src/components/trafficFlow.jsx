@@ -150,7 +150,7 @@ class TrafficFlow extends React.Component {
 
   beginSampleData () {
     this.traffic = { nodes: [], connections: [] };
-    request.get('tweets_vizceral.json')
+    request.get('tweets_service_v2.json')
       .set('Accept', 'application/json')
       .end((err, res) => {
         if (res && res.status === 200) {
